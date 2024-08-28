@@ -43,7 +43,7 @@ sequelize
     console.log("USER TABLE CREATED SUCCESFULLY");
   })
   .catch((reject) => {
-    console.log("SOMETHING WENT WRONG");
+    console.log("SOMETHING WENT WRONG",reject);
   });
 
 User.checkPassword = (password, encryptedPassword) => {

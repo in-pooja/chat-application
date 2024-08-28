@@ -3,16 +3,16 @@ import User from "./usermodel.js";
 import comments from "./commentmodel.js";
 import posts from "./postmodel.js";
 import Conversation from "./conversation.model.js";
-import Message from "./message.model.js";
-
+import Message from "./MessageModel.js";
+!~
 //user file
 
 User.belongsToMany(User,{as:'Followers',through:'UserFollower',foreignKey:'userid'});
 User.belongsToMany(User,{as:'Following',through:'follow',foreignKey:'userid'});
 
 
-User.hasMany(posts,{as:'post',foreignKey:'userId'});
-posts.belongsTo(User,{foreignKey:'userId'});
+// User.hasMany(posts,{as:'post',foreignKey:'userId'});
+// posts.belongsTo(User,{foreignKey:'userId'});
 
 
 
@@ -26,7 +26,7 @@ User.belongsToMany(posts,{as:'bookmarks',through:'PostBookmark',foreignKey:'user
 
 // posts.belongsTo(User,{})
 
-posts.belongsToMany(posts,{as:'likes',through:'postLikes',foreignKey:'id'})
+// posts.belongsToMany(posts,{as:'likes',through:'postLikes',foreignKey:'id'})
 
 
 posts.hasMany(comments,{as:'Comments',foreignKey:'commentid'});

@@ -6,7 +6,7 @@ const profilePicture = sequelize.define("profileImg",{
     profileid:{
         type:DataTypes.INTEGER,
         references:{
-            model:'User',
+            model:'userdata',
             key:'id'
         }
     },
@@ -20,6 +20,6 @@ const profilePicture = sequelize.define("profileImg",{
 sequelize.sync().then((result)=>{
           console.log("profile table created")
 }).catch((err)=>{
-    console.log("something went wrong")
+    console.log("something went wrong",err)
 })
 export default profilePicture;
